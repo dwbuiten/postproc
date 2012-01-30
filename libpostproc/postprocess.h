@@ -27,7 +27,7 @@
  *     external postprocessing API
  */
 
-#include "libavutil/avutil.h"
+#include <libavutil/avutil.h>
 
 #ifndef LIBPOSTPROC_VERSION_MAJOR
 #define LIBPOSTPROC_VERSION_MAJOR 52

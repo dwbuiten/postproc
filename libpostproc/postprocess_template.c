@@ -23,7 +23,17 @@
  * mmx/mmx2/3dnow postprocess code.
  */
 
-#include "libavutil/x86_cpu.h"
+#include "x86_cpu.h"
+
+#define ALIGN_MASK "$-8"
+
+#define MANGLE(a) EXTERN_PREFIX LOCAL_MANGLE(a)
+
+#if ARCH_X86_64 && defined(PIC)
+#    define LOCAL_MANGLE(a) #a "(%%rip)"
+#else
+#    define LOCAL_MANGLE(a) #a
+#endif
 
 #undef REAL_PAVGB
 #undef PAVGB
