@@ -1,20 +1,20 @@
 /*
  * Copyright (C) 2001-2002 Michael Niedermayer (michaelni@gmx.at)
  *
- * This file is part of FFmpeg.
+ * This file is part of FFmpeg/Libav.
  *
- * FFmpeg is free software; you can redistribute it and/or modify
+ * FFmpeg/Libav is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * FFmpeg is distributed in the hope that it will be useful,
+ * FFmpeg/Libav is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with FFmpeg; if not, write to the Free Software
+ * along with FFmpeg/Libav; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
@@ -3213,7 +3213,7 @@ static void RENAME(postProcess)(const uint8_t src[], int srcStride, uint8_t dst[
 
     if(mode & CUBIC_IPOL_DEINT_FILTER) copyAhead=16;
     else if(   (mode & LINEAR_BLEND_DEINT_FILTER)
-            || (mode & FFMPEG_DEINT_FILTER)
+            || (mode & PP_DEINT_FILTER)
             || (mode & LOWPASS5_DEINT_FILTER)) copyAhead=14;
     else if(   (mode & V_DEBLOCK)
             || (mode & LINEAR_IPOL_DEINT_FILTER)
@@ -3340,7 +3340,7 @@ static void RENAME(postProcess)(const uint8_t src[], int srcStride, uint8_t dst[
                 RENAME(deInterlaceMedian)(dstBlock, dstStride);
             else if(mode & CUBIC_IPOL_DEINT_FILTER)
                 RENAME(deInterlaceInterpolateCubic)(dstBlock, dstStride);
-            else if(mode & FFMPEG_DEINT_FILTER)
+            else if(mode & PP_DEINT_FILTER)
                 RENAME(deInterlaceFF)(dstBlock, dstStride, c.deintTemp + x);
             else if(mode & LOWPASS5_DEINT_FILTER)
                 RENAME(deInterlaceL5)(dstBlock, dstStride, c.deintTemp + x, c.deintTemp + width + x);
@@ -3474,7 +3474,7 @@ static void RENAME(postProcess)(const uint8_t src[], int srcStride, uint8_t dst[
                 RENAME(deInterlaceMedian)(dstBlock, dstStride);
             else if(mode & CUBIC_IPOL_DEINT_FILTER)
                 RENAME(deInterlaceInterpolateCubic)(dstBlock, dstStride);
-            else if(mode & FFMPEG_DEINT_FILTER)
+            else if(mode & PP_DEINT_FILTER)
                 RENAME(deInterlaceFF)(dstBlock, dstStride, c.deintTemp + x);
             else if(mode & LOWPASS5_DEINT_FILTER)
                 RENAME(deInterlaceL5)(dstBlock, dstStride, c.deintTemp + x, c.deintTemp + width + x);

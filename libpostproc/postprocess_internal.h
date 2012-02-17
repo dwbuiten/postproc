@@ -1,20 +1,20 @@
 /*
  * Copyright (C) 2001-2002 Michael Niedermayer (michaelni@gmx.at)
  *
- * This file is part of FFmpeg.
+ * This file is part of FFmpeg/Libav.
  *
- * FFmpeg is free software; you can redistribute it and/or modify
+ * FFmpeg/Libav is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * FFmpeg is distributed in the hope that it will be useful,
+ * FFmpeg/Libav is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with FFmpeg; if not, write to the Free Software
+ * along with FFmpeg/Libav; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
@@ -62,7 +62,7 @@
 #define CUBIC_BLEND_DEINT_FILTER        0x8000  // (not implemented yet)
 #define CUBIC_IPOL_DEINT_FILTER         0x40000 // 262144
 #define MEDIAN_DEINT_FILTER             0x80000 // 524288
-#define FFMPEG_DEINT_FILTER             0x400000
+#define PP_DEINT_FILTER             0x400000
 #define LOWPASS5_DEINT_FILTER           0x800000
 
 #define TEMP_NOISE_FILTER               0x100000

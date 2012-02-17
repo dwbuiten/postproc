@@ -3,20 +3,20 @@
  *
  * AltiVec optimizations (C) 2004 Romain Dolbeau <romain@dolbeau.org>
  *
- * This file is part of FFmpeg.
+ * This file is part of FFmpeg/Libav.
  *
- * FFmpeg is free software; you can redistribute it and/or modify
+ * FFmpeg/Libav is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * FFmpeg is distributed in the hope that it will be useful,
+ * FFmpeg/Libav is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with FFmpeg; if not, write to the Free Software
+ * along with FFmpeg/Libav; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
@@ -97,13 +97,13 @@ unsigned postproc_version(void)
 
 const char *postproc_configuration(void)
 {
-    return FFMPEG_CONFIGURATION;
+    return PP_CONFIGURATION;
 }
 
 const char *postproc_license(void)
 {
 #define LICENSE_PREFIX "libpostproc license: "
-    return LICENSE_PREFIX FFMPEG_LICENSE + sizeof(LICENSE_PREFIX) - 1;
+    return LICENSE_PREFIX PP_LICENSE + sizeof(LICENSE_PREFIX) - 1;
 }
 
 #if HAVE_ALTIVEC_H
@@ -146,7 +146,7 @@ static struct PPFilter filters[]=
     {"li", "linipoldeint",          1, 1, 4, LINEAR_IPOL_DEINT_FILTER},
     {"ci", "cubicipoldeint",        1, 1, 4, CUBIC_IPOL_DEINT_FILTER},
     {"md", "mediandeint",           1, 1, 4, MEDIAN_DEINT_FILTER},
-    {"fd", "ffmpegdeint",           1, 1, 4, FFMPEG_DEINT_FILTER},
+    {"fd", "ffmpegdeint",           1, 1, 4, PP_DEINT_FILTER},
     {"l5", "lowpass5",              1, 1, 4, LOWPASS5_DEINT_FILTER},
     {"tn", "tmpnoise",              1, 7, 8, TEMP_NOISE_FILTER},
     {"fq", "forcequant",            1, 0, 0, FORCE_QUANT},
