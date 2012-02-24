@@ -778,6 +778,7 @@ cp_if_changed(){
 CONFIG_LIST="
     gpl
     memalign_hack
+    pic
     postproc
     runtime_cpudetect
     shared
