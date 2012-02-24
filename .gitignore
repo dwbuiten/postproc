@@ -1,0 +1,10 @@
+.config
+.version
+*.o
+*.d
+*.exe
+*.ho
+*-example
+*-test
+config.*
+libpostproc/libpostproc*
