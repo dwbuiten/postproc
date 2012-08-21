@@ -23,7 +23,7 @@
  * mmx/mmx2/3dnow postprocess code.
  */
 
-#include "x86_cpu.h"
+#include "x86/asm.h"
 
 #define ALIGN_MASK "$-8"
 
